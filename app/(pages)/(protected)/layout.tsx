@@ -2,8 +2,8 @@
 "use client"
 import { Inter } from 'next/font/google'
 import { useContext } from 'react'
-import AdminNavBar from '../components/AdminNavBar'
-import TicketContext from "../contex/globalContext"
+import AdminNavBar from '../../components/AdminNavBar'
+import TicketContext from "../../contex/globalContext"
 import {useRouter} from "next/navigation"
 
 const inter = Inter({ subsets: ['latin'] })

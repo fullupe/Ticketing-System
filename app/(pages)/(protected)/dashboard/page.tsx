@@ -3,8 +3,8 @@
 import {  MapPinIcon} from '@heroicons/react/24/solid';
 import React, { useContext, useEffect, useState } from 'react';
 
-import DashBoradHeader from '../../components/DashBoradHeader';
-import TicketContext from "../../contex/globalContext"
+import DashBoradHeader from '../../../components/DashBoradHeader';
+import TicketContext from "../../../contex/globalContext"
 import { usePagination } from '@mantine/hooks';
 
 const TicketStatus = [ "pendding","progress","completed"]

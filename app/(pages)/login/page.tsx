@@ -1,6 +1,6 @@
 "use client"
 import React, { useContext, useEffect, useState } from 'react'
-import TicketContext from "../contex/globalContext"
+import TicketContext from "../../contex/globalContext"
 import {useRouter} from "next/navigation"
 
 import { toast } from 'react-toastify';

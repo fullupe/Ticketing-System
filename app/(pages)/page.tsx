@@ -2,10 +2,10 @@
 
 import React, { useContext, useEffect, useState } from 'react';
 import { PlusCircleIcon } from '@heroicons/react/24/solid';
-import FormModal from './components/FormModal';
-import TicketContext from "./contex/globalContext";
-import ClientTicketBoard from './components/ClientTicketBoard';
-import UpdateTicketModal from './components/UpdateTicketModal';
+import FormModal from '../components/FormModal';
+import TicketContext from "../contex/globalContext";
+import ClientTicketBoard from '../components/ClientTicketBoard';
+import UpdateTicketModal from '../components/UpdateTicketModal';
 
 export default function Home() {
 

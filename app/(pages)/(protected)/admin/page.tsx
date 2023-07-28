@@ -2,8 +2,8 @@
 
 import React, { useContext, useEffect, useState } from 'react'
 
-import TicketBoard from '../../components/TicketBoard'
-import TicketContext from "../../contex/globalContext"
+import TicketBoard from '../../../components/TicketBoard'
+import TicketContext from "../../../contex/globalContext"
 
 
 function Admin() {

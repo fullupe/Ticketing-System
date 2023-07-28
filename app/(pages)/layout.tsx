@@ -1,10 +1,10 @@
 "use client"
 
-import './globals.css'
+import '../globals.css'
 //import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-import TicketContext from "../app/contex/globalContext";
+import TicketContext from "../../app/contex/globalContext";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -27,20 +27,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-//   useEffect(() => {
+  useEffect(() => {
 
-//     if(!localStorage.getItem("TicketData")){
+    if(!localStorage.getItem("TicketData")){
 
-//     localStorage.setItem("TicketData",JSON.stringify([]))
-//         }
+    localStorage.setItem("TicketData",JSON.stringify([]))
+        }
 
-//     if(!localStorage.getItem("Secret")){
+    if(!localStorage.getItem("Secret")){
 
-//     localStorage.setItem("Secret",JSON.stringify("password@password"))
-//         }
+    localStorage.setItem("Secret",JSON.stringify("password@password"))
+        }
 
   
-//  }, [])
+ }, [])
 
   const [ticket, setTicket] = useState<[] | any>([])
 
@@ -60,15 +60,15 @@ export default function RootLayout({
     
     <html lang="en">
       <body >
-    {/* <TicketContext.Provider value={{ticket, setTicket,setIsOpenEngUpdate,isOpenEngUpdate,runUpDate, setRunUpDate, targetTicket, setTargetTicket,isAuth, setIsAuth,isVisible, setIsVisible,isOpenTicketUpdate,setIsOpenTicketUpdate}}> */}
+    <TicketContext.Provider value={{ticket, setTicket,setIsOpenEngUpdate,isOpenEngUpdate,runUpDate, setRunUpDate, targetTicket, setTargetTicket,isAuth, setIsAuth,isVisible, setIsVisible,isOpenTicketUpdate,setIsOpenTicketUpdate}}>
       
-      {/* <DndProvider backend={HTML5Backend}> */}
+      <DndProvider backend={HTML5Backend}>
 
-      {/* <ToastContainer /> */}
+      <ToastContainer />
         {children}
 
-    {/* </DndProvider> */}
-    {/* </TicketContext.Provider> */}
+    </DndProvider>
+    </TicketContext.Provider>
       </body>
     </html>
 
