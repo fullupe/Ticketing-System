@@ -14,22 +14,21 @@ function FormModal():React.JSX.Element | null {
     const [problemDescriptions, setProblemDescriptions] = useState('')
 
 
-    if(!isVisible) return null;
-
-
-
+    
+    
+    
     const handleClose =(e:any)=>{
         if(e.target.id === "wrap") setIsVisible(false)
         setTargetTicket('')
     }
-
+    
     const location = ["Tema-Main", "Dome-Pillar2","Spintex-Base-1", "Spintex-Base-2","Kasoa-Base-1", "Kasoa-Base-2","Achimota-Main","Achimota-Base-2"]
-
-
-
+    
+    
+    
     const handleSubmit = (e:any)=>{
         e.preventDefault()
-
+        
         const NewTicket ={
             id:uuidv4(),
             status:"pendding",
@@ -38,28 +37,30 @@ function FormModal():React.JSX.Element | null {
             locations,
             problemDescriptions,
         }
-
+        
         setTicket((prevTicket:[])=>{
-
-        const tickets = [...prevTicket, NewTicket];
-
-        localStorage.setItem("TicketData",JSON.stringify(tickets));
-
-        return tickets
-
+            
+            const tickets = [...prevTicket, NewTicket];
+            
+            localStorage.setItem("TicketData",JSON.stringify(tickets));
+            
+            return tickets
+            
         })
-
+        
         setProblemDescriptions("");
         setLocations("")
-
+        
         setTargetTicket('')
-
+        
         toast.success("New Ticket Added")
         
-
+        
     }
-
-  return (
+    
+    if(!isVisible) return null;
+    
+    return (
     <div onClick={handleClose} id="wrap" className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm justify-center items-center flex">
         
         <div className="w-[600px] flex flex-col">

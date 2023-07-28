@@ -10,12 +10,12 @@ type Props = {
 
 function AddEngineerModal({}: Props) {
 
+    const [assignedEng, setAssignedEng] = useState('')
 
     const {targetTicket,  setTicket,  isOpenEngUpdate, setIsOpenEngUpdate}=useContext(TicketContext)
     
     if(!isOpenEngUpdate) return null;
 
-    const [assignedEng, setAssignedEng] = useState('')
 
  
 

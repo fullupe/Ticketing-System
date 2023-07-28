@@ -8,6 +8,7 @@ type Props = {}
 
 function Page({}: Props) {
     const router = useRouter()
+    const [password, setPassword]=useState('')
 
     const {isAuth,setIsAuth}=useContext(TicketContext)
 
@@ -15,7 +16,6 @@ function Page({}: Props) {
 
     const SECRET = JSON.parse(localStorage.getItem("Secret")||"") 
 
-    const [password, setPassword]=useState('')
 
     const handleLogin =(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()

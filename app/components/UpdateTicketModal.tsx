@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 type Props = {}
 
 function UpdateTicketModal({}: Props) {
+    const [problemDescriptions, setProblemDescriptions] = useState('')
     const {ticket,isOpenTicketUpdate,setIsOpenTicketUpdate,targetTicket, setTicket,}=useContext(TicketContext)
 
 
@@ -15,7 +16,6 @@ function UpdateTicketModal({}: Props) {
     }
     
     
-    const [problemDescriptions, setProblemDescriptions] = useState('')
     
     
     useEffect(()=>{
