@@ -23,14 +23,14 @@ function Page({}: Props) {
     const handleLogin =(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
         if(secret == password){
-            setIsAuth(true)
-            router.replace("/Admin")
+            setIsAuth(true);
+           ()=>router.replace("/Admin")
         }
 
         toast.warning("wrong password")
     }
 
-    if(isAuth)router.replace("/Admin")
+    if(isAuth)()=>router.replace("/Admin")
     
   return (
     <body className="flex items-center justify-center min-h-screen">
