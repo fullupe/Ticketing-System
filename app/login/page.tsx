@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 type Props = {}
 
-function page({}: Props) {
+function Page({}: Props) {
     const router = useRouter()
 
     const {isAuth,setIsAuth}=useContext(TicketContext)
@@ -48,4 +48,4 @@ function page({}: Props) {
   )
 }
 
-export default page
+export default Page

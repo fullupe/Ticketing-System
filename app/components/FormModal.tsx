@@ -10,9 +10,13 @@ import { toast } from 'react-toastify';
 function FormModal():React.JSX.Element | null {
 
     const {setTargetTicket, setTicket, isVisible, setIsVisible}=useContext(TicketContext)
+    const [locations, setLocations] = useState('')
+    const [problemDescriptions, setProblemDescriptions] = useState('')
 
 
     if(!isVisible) return null;
+
+
 
     const handleClose =(e:any)=>{
         if(e.target.id === "wrap") setIsVisible(false)
@@ -21,8 +25,6 @@ function FormModal():React.JSX.Element | null {
 
     const location = ["Tema-Main", "Dome-Pillar2","Spintex-Base-1", "Spintex-Base-2","Kasoa-Base-1", "Kasoa-Base-2","Achimota-Main","Achimota-Base-2"]
 
-    const [locations, setLocations] = useState('')
-    const [problemDescriptions, setProblemDescriptions] = useState('')
 
 
     const handleSubmit = (e:any)=>{

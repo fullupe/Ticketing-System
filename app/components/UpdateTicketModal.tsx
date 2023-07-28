@@ -8,30 +8,31 @@ function UpdateTicketModal({}: Props) {
     const {ticket,isOpenTicketUpdate,setIsOpenTicketUpdate,targetTicket, setTicket,}=useContext(TicketContext)
 
 
-    if(!isOpenTicketUpdate) return null;
-
+    
     const handleClose =(e:any)=>{
         if(e.target.id === "wrap") setIsOpenTicketUpdate(false)
         
     }
-
-  
+    
+    
     const [problemDescriptions, setProblemDescriptions] = useState('')
-
-
+    
+    
     useEffect(()=>{
         ticket.map((ticket)=>{
+            
             if(ticket.id == targetTicket){
                 setProblemDescriptions(ticket.problemDescriptions)
             }
         })
-
+        
     },[isOpenTicketUpdate])
-
-
+    
+    
     const handleUpdate = (e:any)=>{
         e.preventDefault()
         
+        setIsOpenTicketUpdate(false)
         
         setTicket((prev:[] | any)=>{
             
@@ -47,16 +48,14 @@ function UpdateTicketModal({}: Props) {
             
             return updateTicket;
         })
-
-        setIsOpenTicketUpdate(false)
-
+        
+        
         toast.success("Ticket Updated")
         
-        
-
 
     }
-
+    
+    if(!isOpenTicketUpdate) return null;
   return (
     <div onClick={handleClose} id="wrap" className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm justify-center items-center flex">
         
