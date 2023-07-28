@@ -7,17 +7,18 @@ import DashBoradHeader from '../../components/DashBoradHeader';
 import TicketContext from "../../contex/globalContext"
 import { usePagination } from '@mantine/hooks';
 
+const TicketStatus = [ "pendding","progress","completed"]
 
 type Props = {}
 const TICKET_PER_PAGE = 5;
 
 function Dashboard({}: Props) {
+  const [TicketsPedding, setTicketsPendding] = useState<[] | any>([])
+  const [TicketProgress, setTicketProgress] = useState<[] | any>([])
+  const [TicketCompleted, setTicketCompleted] = useState<[] | any>([])
 
     const {ticket, setTicket} =useContext(TicketContext)
     
-        const [TicketsPedding, setTicketsPendding] = useState<[] | any>([])
-        const [TicketProgress, setTicketProgress] = useState<[] | any>([])
-        const [TicketCompleted, setTicketCompleted] = useState<[] | any>([])
 
 
     useEffect(()=>{
@@ -48,7 +49,6 @@ function Dashboard({}: Props) {
 
     
 
-const TicketStatus = [ "pendding","progress","completed"]
 
  const [visibleResult, setVisibleResult]=useState(
   ticket.slice(0, TICKET_PER_PAGE));
@@ -90,7 +90,7 @@ const TicketStatus = [ "pendding","progress","completed"]
 
                       <MapPinIcon className="h-6 w-6 text-gray-500"/>
                       
-                      Location</th>
+                      Locations</th>
 
                     <th className="px-4 py-2">  Problem Des.</th>
                     
