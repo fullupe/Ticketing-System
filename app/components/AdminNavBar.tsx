@@ -21,8 +21,8 @@ export default function AdminNavBar({}: Props) {
     <div className="flex w-full  h-14 justify-center fixed mt-2 ">
         <div className="flex h-full w-full md:w-[80%]  rounded-full items-center justify-between bg-gray-200 border-2  px-8 shadow-2xl">
             <div className="flex space-x-2 text-gray-200">
-                <Link href="/Dashboard" className={`p-1 px-1.5  ${pathname==="/Dashboard" ? "underline": ""}  text-black rounded-lg cursor-pointer hover:underline decoration-4`}>DashBoard</Link>
-                <Link href="/Admin" className={`p-1 px-1.5      ${pathname==="/Admin" ? "underline": ""} text-black rounded-lg cursor-pointer hover:underline decoration-4`}>Admin</Link>
+                <Link href="/dashboard" className={`p-1 px-1.5  ${pathname==="/dashboard" ? "underline": ""}  text-black rounded-lg cursor-pointer hover:underline decoration-4`}>DashBoard</Link>
+                <Link href="/admin" className={`p-1 px-1.5      ${pathname==="/admin" ? "underline": ""} text-black rounded-lg cursor-pointer hover:underline decoration-4`}>Admin</Link>
             </div>
             <div className="flex space-x-2 text-gray-200">
                 {

@@ -24,13 +24,13 @@ function Page({}: Props) {
         e.preventDefault()
         if(secret == password){
             setIsAuth(true);
-           return router.push("/Admin")
+           return router.push("/admin")
         }
 
         toast.warning("wrong password")
     }
 
-    if(isAuth) return router.push("/Admin")
+    if(isAuth) return router.push("/admin")
     
   return (
     <body className="flex items-center justify-center min-h-screen">
