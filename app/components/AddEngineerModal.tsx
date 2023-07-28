@@ -7,6 +7,7 @@ type Props = {
    
    
 }
+const engineers = [{id:1,name:"William"}, {id:2,name:"Kenneth"}, {id:3, name:"George"},{id:4, name:"Sampson"},{id:5, name:"Phidelist"}]
 
 function AddEngineerModal({}: Props) {
 
@@ -14,44 +15,39 @@ function AddEngineerModal({}: Props) {
 
     const {targetTicket,  setTicket,  isOpenEngUpdate, setIsOpenEngUpdate}=useContext(TicketContext)
     
-    if(!isOpenEngUpdate) return null;
-
-
- 
-
-
     const handleClose = (e:any)=>{
-        //e.preventDefault();
-        if(e.target.id === "wrap") setIsOpenEngUpdate(false)
-     }
-
-     const handleSubmit =  (e:any)=>{
-        e.preventDefault()
-
-       //setAssignedEng("")
-
-       setTicket((prev:[] | any)=>{
-
+      //e.preventDefault();
+      if(e.target.id === "wrap")setIsOpenEngUpdate(false)
+    }
+    
+    const handleSubmit =  (e:any)=>{
+      e.preventDefault()
+      setIsOpenEngUpdate(false)
+      
+      //setAssignedEng("")
+      
+      setTicket((prev:[] | any)=>{
+        
         const updateTicket = prev.map((ticket:[]|any)=>{
           if(ticket.id == targetTicket){
             return {...ticket, asignedTo:assignedEng,}
           }
           return ticket;
         })
-  
+        
         localStorage.setItem("TicketData", JSON.stringify(updateTicket))
-  
+        
         return updateTicket;
       })
-    
-      setIsOpenEngUpdate(false)
+      
     }
+    
+    
+    
+    if(!isOpenEngUpdate) return null;
 
-
-    const engineers = [{id:1,name:"William"}, {id:2,name:"Kenneth"}, {id:3, name:"George"},{id:4, name:"Sampson"},{id:5, name:"Phidelist"}]
-
-  return (
-    <div onClick={handleClose} id="wrap" className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm justify-center items-center flex">
+    return (
+      <div onClick={handleClose} id="wrap" className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm justify-center items-center flex">
         
         <div className="w-[600px] flex flex-col">
 
