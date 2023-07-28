@@ -1,5 +1,5 @@
 "use client"
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import TicketContext from "../contex/globalContext"
 import {useRouter} from "next/navigation"
 import { toast } from 'react-toastify';
@@ -10,16 +10,18 @@ function Page({}: Props) {
     const router = useRouter()
     const [password, setPassword]=useState('')
 
-    const {isAuth,setIsAuth}=useContext(TicketContext)
+    const [secret, setSecret] = useState('')
+    const {isAuth,setIsAuth}=useContext(TicketContext);
 
+    useEffect(()=>{
+        setSecret(JSON.parse(localStorage.getItem("Secret")||""))
 
-
-    const SECRET = JSON.parse(localStorage.getItem("Secret")||"") 
+    },[])
 
 
     const handleLogin =(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
-        if(SECRET == password){
+        if(secret == password){
             setIsAuth(true)
             router.push("/Admin")
         }

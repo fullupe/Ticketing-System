@@ -87,7 +87,8 @@ const TicketStatus = [ "pendding","progress","completed"]
                 <tr className="bg-gray-200">
                     <th className="px-4 py-2">No</th>
                     <th className="px-4 py-2 pt-6 flex items-center justify-center">
-                      <span><MapPinIcon className="h-6 w-6 text-gray-500"/></span>
+
+                      <MapPinIcon className="h-6 w-6 text-gray-500"/>
                       
                       Location</th>
 
