@@ -62,11 +62,8 @@ const TicketStatus = [ "pendding","progress","completed"]
       setVisibleResult(ticket.slice(start,end))
     },
   })
-  useEffect(()=>{
-    pagination
-  },[])
 
-  
+
 
 
   return (
@@ -77,7 +74,7 @@ const TicketStatus = [ "pendding","progress","completed"]
         <div className="flex gap-4 w-[80%] items-center justify-center my-4">
         {
           TicketStatus.map((status,index)=>(
-            <DashBoradHeader ticket={ticket} key={index} status={status} index={index} TicketsPedding={TicketsPedding} TicketProgress={TicketProgress} TicketCompleted={TicketCompleted}/>
+            <DashBoradHeader ticket={ticket} key={index} status={status}  TicketsPedding={TicketsPedding} TicketProgress={TicketProgress} TicketCompleted={TicketCompleted}/>
           ))
         }
 
@@ -115,7 +112,7 @@ const TicketStatus = [ "pendding","progress","completed"]
                 {
                   visibleResult.map((items:any,index:number)=>(
 
-                <tr>
+                <tr key={index}>
                     <td className="border px-4 py-2">{index+1}</td>
                     <td className="border px-4 py-2">{items.locations}</td>
                     <td className="border px-4 py-2">{items.problemDescriptions}</td>
