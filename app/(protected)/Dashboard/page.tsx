@@ -2,11 +2,11 @@
 
 import { ClockIcon, MapPinIcon, SignalIcon } from '@heroicons/react/24/solid';
 import React, { useContext, useEffect, useState } from 'react';
-import { isTemplateExpression } from 'typescript';
+
 import DashBoradHeader from '../../components/DashBoradHeader';
 import TicketContext from "../../contex/globalContext"
 import { usePagination } from '@mantine/hooks';
-import page from '../../page';
+
 
 type Props = {}
 const TICKET_PER_PAGE = 5;
@@ -14,6 +14,10 @@ const TICKET_PER_PAGE = 5;
 function Dashboard({}: Props) {
 
     const {ticket, setTicket} =useContext(TicketContext)
+    
+        const [TicketsPedding, setTicketsPendding] = useState<[] | any>([])
+        const [TicketProgress, setTicketProgress] = useState<[] | any>([])
+        const [TicketCompleted, setTicketCompleted] = useState<[] | any>([])
 
 
     useEffect(()=>{
@@ -23,10 +27,6 @@ function Dashboard({}: Props) {
       },[])
 
 
-
-    const [TicketsPedding, setTicketsPendding] = useState<[] | any>([])
-    const [TicketProgress, setTicketProgress] = useState<[] | any>([])
-    const [TicketCompleted, setTicketCompleted] = useState<[] | any>([])
 
     useEffect(() => {
     
