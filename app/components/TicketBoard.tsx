@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import TicketSection from './TicketSection'
 import {useFetchData} from "../hooks/useFetchData"

@@ -1,4 +1,4 @@
-
+"use client"
 import React, { useContext} from 'react';
 import { useDrop } from 'react-dnd';
 import TicketContext from "../contex/globalContext"
