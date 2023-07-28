@@ -1,6 +1,6 @@
 "use client"
 
-import { ClockIcon, MapPinIcon, SignalIcon } from '@heroicons/react/24/solid';
+import {  MapPinIcon} from '@heroicons/react/24/solid';
 import React, { useContext, useEffect, useState } from 'react';
 
 import DashBoradHeader from '../../components/DashBoradHeader';
@@ -9,10 +9,10 @@ import { usePagination } from '@mantine/hooks';
 
 const TicketStatus = [ "pendding","progress","completed"]
 
-type Props = {}
+
 const TICKET_PER_PAGE = 5;
 
-function Dashboard({}: Props) {
+function Dashboard() {
   const [TicketsPedding, setTicketsPendding] = useState<[] | any>([])
   const [TicketProgress, setTicketProgress] = useState<[] | any>([])
   const [TicketCompleted, setTicketCompleted] = useState<[] | any>([])
@@ -23,7 +23,7 @@ function Dashboard({}: Props) {
 
     useEffect(()=>{
         let local:string | any =localStorage.getItem("TicketData")
-        return setTicket(JSON.parse(local))
+         setTicket(JSON.parse(local))
     
       },[])
 
@@ -135,13 +135,9 @@ function Dashboard({}: Props) {
 
                   ))
                 }
-                {/* <button onClick={pagination.next}>Next</button> */}
+                
         </div>
     </div>
-
-
-
-
 
 
     </div>

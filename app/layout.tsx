@@ -59,7 +59,6 @@ export default function RootLayout({
   return (
     
     <html lang="en">
-
       <body >
     <TicketContext.Provider value={{ticket, setTicket,setIsOpenEngUpdate,isOpenEngUpdate,runUpDate, setRunUpDate, targetTicket, setTargetTicket,isAuth, setIsAuth,isVisible, setIsVisible,isOpenTicketUpdate,setIsOpenTicketUpdate}}>
       

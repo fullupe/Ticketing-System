@@ -6,7 +6,7 @@ import TicketBoard from '../../components/TicketBoard'
 import TicketContext from "../../contex/globalContext"
 
 
-function Page() {
+function Admin() {
 
     const {setTicket}=useContext(TicketContext);
 
@@ -15,7 +15,7 @@ function Page() {
   
       let local:string | any =localStorage.getItem("TicketData")
   
-      return setTicket(JSON.parse(local))
+       setTicket(JSON.parse(local))
   
     },[])
     
@@ -32,4 +32,4 @@ function Page() {
   )
 }
 
-export default Page
+export default Admin
