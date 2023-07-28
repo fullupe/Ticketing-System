@@ -1,19 +1,16 @@
 "use client"
 
 import React, { useContext, useEffect, useState } from 'react'
-import { PlusCircleIcon } from '@heroicons/react/24/solid'
-import FormModal from '../../components/FormModal'
+
 import TicketBoard from '../../components/TicketBoard'
 import TicketContext from "../../contex/globalContext"
-import AdminNavBar from '../../components/AdminNavBar'
-
-function page() {
 
 
-    const {ticket, setTicket}=useContext(TicketContext)
+function Page() {
 
-    const [isVisible, setIsVisible] = useState<boolean>(false)
-  
+
+    const {setTicket}=useContext(TicketContext)
+
   
     useEffect(()=>{
   
@@ -30,16 +27,8 @@ function page() {
                 </section>
 
 
-
-      {/* <FormModal/> */}
-
-
-      
-
-
-
   </main>
   )
 }
 
-export default page
+export default Page

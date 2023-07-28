@@ -14,7 +14,7 @@ function TicketBoard({}: Props) {
     <div className="flex flex-col h-screen w-full">
 
    
-    <div className=" flex  gap-3 w-full bg-red-900h p-2  ">
+    <div className=" flex   gap-3 w-full bg-red-900h p-2  ">
         {
             TicketStatus.map((status, index)=>(
 
