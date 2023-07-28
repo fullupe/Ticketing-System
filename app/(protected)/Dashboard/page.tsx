@@ -90,7 +90,7 @@ function Dashboard({}: Props) {
 
                       <MapPinIcon className="h-6 w-6 text-gray-500"/>
                       
-                      Locations</th>
+                      Location</th>
 
                     <th className="px-4 py-2">  Problem Des.</th>
                     

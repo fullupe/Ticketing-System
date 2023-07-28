@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import TicketContext from "../contex/globalContext"
 import {useRouter} from "next/navigation"
+
 import { toast } from 'react-toastify';
 
 type Props = {}
@@ -23,13 +24,13 @@ function Page({}: Props) {
         e.preventDefault()
         if(secret == password){
             setIsAuth(true)
-            router.push("/Admin")
+            router.replace("/Admin")
         }
 
         toast.warning("wrong password")
     }
 
-    if(isAuth)router.push("/Admin")
+    if(isAuth)router.replace("/Admin")
     
   return (
     <body className="flex items-center justify-center min-h-screen">

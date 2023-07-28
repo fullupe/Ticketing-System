@@ -8,8 +8,7 @@ import TicketContext from "../../contex/globalContext"
 
 function Page() {
 
-
-    const {setTicket}=useContext(TicketContext)
+    const {setTicket}=useContext(TicketContext);
 
   
     useEffect(()=>{
@@ -19,6 +18,8 @@ function Page() {
       return setTicket(JSON.parse(local))
   
     },[])
+    
+
   return (
     <main className="flex min-h-screen flex-col items-center px-1  md:px-24 w-full ">
 
