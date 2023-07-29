@@ -3,19 +3,18 @@ import React, { useContext} from 'react'
 import TicketContext from "../contex/globalContext"
 import { usePathname} from 'next/navigation'
 
-type Props = {}
 
-export default function AdminNavBar({}: Props) {
 
-    const pathname = usePathname()
+export default function AdminNavBar() {
 
     const {isAuth,setIsAuth}=useContext(TicketContext)
+    const pathname = usePathname()
+
 
     const handlelogOut = () => {
         setIsAuth(false)
     }
 
-   
 
   return (
     <div className="flex w-full  h-14 justify-center fixed mt-2 ">
