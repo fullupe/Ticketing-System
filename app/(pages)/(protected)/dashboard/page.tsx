@@ -12,7 +12,7 @@ const TicketStatus = [ "pendding","progress","completed"]
 
 const TICKET_PER_PAGE = 5;
 
-function Dashboard() {
+const Dashboard=()=> {
   const [TicketsPedding, setTicketsPendding] = useState<[] | any>([])
   const [TicketProgress, setTicketProgress] = useState<[] | any>([])
   const [TicketCompleted, setTicketCompleted] = useState<[] | any>([])

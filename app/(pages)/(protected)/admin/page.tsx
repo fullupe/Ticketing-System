@@ -1,12 +1,12 @@
 "use client"
 
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import TicketBoard from '../../../components/TicketBoard'
 import TicketContext from "../../../contex/globalContext"
 
 
-function Admin() {
+const Admin=()=> {
 
     const {setTicket}=useContext(TicketContext);
 
