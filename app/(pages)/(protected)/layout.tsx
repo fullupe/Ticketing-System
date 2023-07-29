@@ -17,7 +17,11 @@ export default function RootLayout({
   const {isAuth,setIsAuth}=useContext(TicketContext)
   const router = useRouter()
 
-  if(!isAuth) router.push("/login")
+  if(!isAuth){
+    router.push("/login")
+
+    return <></>
+  } 
 
   return (
     <html lang="en">
