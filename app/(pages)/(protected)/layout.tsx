@@ -2,7 +2,7 @@
 "use client"
 import { Inter } from 'next/font/google'
 import '../../globals.css'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import AdminNavBar from '../../components/AdminNavBar'
 import TicketContext from "../../contex/globalContext"
 import {useRouter} from "next/navigation"
@@ -12,17 +12,13 @@ export default function RootLayout({children}:{children: React.ReactNode}) {
   const {isAuth}=useContext(TicketContext)
   const router = useRouter()
 
+useEffect(()=>{
   if(!isAuth){
-   //router.push("/login");
+       router.push("/login");
 
-   return <></>
+      } 
 
-  } 
-
-
-  if (typeof window === 'undefined') {
-    return <></>;
-  } else {
+},[isAuth])
   
 
   return (
@@ -36,5 +32,5 @@ export default function RootLayout({children}:{children: React.ReactNode}) {
     </html>
 
   )
-  }
+  
 }
