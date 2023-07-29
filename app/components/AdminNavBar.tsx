@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link'
 import React, { useContext} from 'react'
 import TicketContext from "../contex/globalContext"
@@ -7,7 +8,7 @@ import { usePathname} from 'next/navigation'
 
 export default function AdminNavBar() {
 
-    const {isAuth,setIsAuth}=useContext(TicketContext)
+    const {isAuth, setIsAuth}=useContext(TicketContext)
     const pathname = usePathname()
 
 
